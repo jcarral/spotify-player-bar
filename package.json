@@ -1,0 +1,24 @@
+{
+  "name": "spotify-player-bar",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcdc21/spotify-player-bar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcdc21/spotify-player-bar/issues"
+  },
+  "homepage": "https://github.com/jcdc21/spotify-player-bar#readme",
+  "dependencies": {
+    "menubar": "^5.1.0",
+    "spotify-node-applescript": "^1.0.0"
+  }
+}
