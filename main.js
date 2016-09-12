@@ -48,7 +48,7 @@ const newSongNotification = () => {
     modalWindow.webContents.send('new-song-info', currentSong)
     modalWindow.show()
     setTimeout(() => {
-      //modalWindow.close()
+      modalWindow.close()
     }, 5000)
   })
 }
@@ -73,7 +73,7 @@ const onChange = () => {
 
 const onLoad = () => {
   spotify.getState((err, state) => {
-    if(err) return console.log(err)
+    if (err) return console.log(err)
     if (state.state !== 'playing') {
       currentSong.name = "No name"
       currentSong.album_artist = "No artist"
