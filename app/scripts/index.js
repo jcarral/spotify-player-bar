@@ -1,20 +1,20 @@
 const {ipcRenderer} = require('electron')
 const spotify = require('spotify-node-applescript')
 
+const changeContent = (track) => {
+  const title = document.getElementById("songTitle")
+  const artist = document.getElementById("songArtist")
+  title.innerHTML = track.name
+  artist.innerHTML = track.album_artist
+}
 
 const updateSong = () => {
-
   spotify.getTrack((err, track) => {
     if (err)
       return console.log(err);
-    const title = document.getElementById("songTitle")
-    const artist = document.getElementById("songArtist")
-    title.innerHTML = track.name
-    artist.innerHTML = track.album_artist
+    changeContent(track)
   })
 }
-
-
 
 const btnNext = document.getElementById("btnNext")
 const btnPrev = document.getElementById("btnPrev")
@@ -45,4 +45,9 @@ btnPrev.addEventListener("click", () => {
     console.log("Previous song playing...");
     updateSong()
   })
+})
+
+ipcRenderer.on('new-song-info-menu', function(event, track){
+  console.log("New song")
+  changeContent(track)
 })
